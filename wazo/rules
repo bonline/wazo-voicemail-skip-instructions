@@ -4,6 +4,7 @@
 
 case "$1" in
     build)
+        echo 'No build required'
     ;;
 
     package)
@@ -12,12 +13,12 @@ case "$1" in
     ;;
 
     install)
-        asterisk -x 'dialplan reload'
+        asterisk -rx 'dialplan reload'
     ;;
 
     uninstall)
         rm ${pkgdir}/etc/asterisk/extensions_extra.d/voicemail_skip_instructions.conf
-        asterisk -x 'dialplan reload'
+        asterisk -rx 'dialplan reload'
     ;;
 
     postrm)

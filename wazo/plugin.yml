@@ -8,6 +8,4 @@ min_wazo_version: 24.01
 tags:
   - voicemail
   - dialplan
-debian_depends:
-  - vim
 homepage: https://github.com/bonline/wazo-voicemail-skip-instructions
