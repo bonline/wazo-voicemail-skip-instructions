@@ -1,0 +1,31 @@
+#!/bin/sh
+# Copyright 2021 Wazo Team (see the AUTHORS file)
+# SPDX-License-Identifier: GPLv3
+
+case "$1" in
+    build)
+        echo 'No build required'
+    ;;
+
+    package)
+        mkdir -p ${pkgdir}/etc/asterisk/extensions_extra.d
+        cp voicemail_skip_instructions.conf ${pkgdir}/etc/asterisk/extensions_extra.d/
+    ;;
+
+    install)
+        asterisk -rx 'dialplan reload'
+    ;;
+
+    uninstall)
+        rm ${pkgdir}/etc/asterisk/extensions_extra.d/voicemail_skip_instructions.conf
+        asterisk -rx 'dialplan reload'
+    ;;
+
+    postrm)
+    ;;
+
+    *)
+        echo "$0 called with unknown argument '$1'" >&2
+        exit 1
+    ;;
+esac

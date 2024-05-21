@@ -1,0 +1,11 @@
+name: wazo-voicemail-skip-instructions
+namespace: bonline
+version: 0.0.1
+author: bOnline
+display_name: Skip Voicemail Instructions
+plugin_format_version: 1
+min_wazo_version: 24.01
+tags:
+  - voicemail
+  - dialplan
+homepage: https://github.com/bonline/wazo-voicemail-skip-instructions
